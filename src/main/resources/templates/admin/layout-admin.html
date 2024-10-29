@@ -1,25 +1,65 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
-    <!-- Header content -->
+    <meta charset="UTF-8">
+    <title>Trang Quản Lý</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            /* Chiều cao đầy đủ cho body */
+            margin: 0;
+            /* Bỏ margin mặc định */
+            display: flex;
+            /* Sử dụng Flexbox cho body */
+            flex-direction: column;
+            /* Đặt chiều hướng theo cột */
+        }
+
+        main {
+            flex: 1;
+            /* Chiếm không gian còn lại giữa header và footer */
+        }
+
+        footer {
+            background-color: #343a40;
+            /* Màu nền cho footer */
+            color: white;
+            /* Màu chữ */
+            text-align: center;
+            /* Căn giữa chữ */
+            padding: 20px;
+            /* Khoảng cách bên trong */
+        }
+    </style>
 </head>
+
 <body>
-<header class="row">
-    <div class="col">
-        <div th:replace="~{admin/fragments/header :: header}"></div>
-    </div>
-</header>
-<main class="container">
-    <section class="row mt-4">
-        <div class="col mt-5 mb-5">
-            <div layout:fragment="content"></div>
+
+    <header class="row">
+        <div class="col">
+            <div th:replace="~{admin/fragments/header :: header}"></div>
         </div>
-    </section>
-</main>
-<footer class="row">
-    <div class="col">
-        <div th:replace="~{admin/fragments/footer :: footer}"></div>
-    </div>
-</footer>
+    </header>
+    <main class="container">
+        <section class="row mt-4">
+            <div class="col mt-5 mb-5">
+                <div layout:fragment="content"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="row">
+        <div class="col">
+            <div th:replace="~{admin/fragments/footer :: footer}"></div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
